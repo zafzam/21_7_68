@@ -3,24 +3,19 @@
     "builds": [
         {
             "src": "TwoOneRemakeFix/wsgi.py",
-            "use": "@vercel/python"
-        },
-        {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build",
+            "use": "@vercel/python",
             "config": {
-                "distDir": "staticfiles_build"
+                "maxLambdaSize": "15mb"
             }
         }
     ],
     "routes": [
         {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
-        {
             "src": "/(.*)",
             "dest": "TwoOneRemakeFix/wsgi.py"
         }
-    ]
+    ],
+    "env": {
+        "DJANGO_SETTINGS_MODULE": "TwoOneRemakeFix.settings"
+    }
 }
