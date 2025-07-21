@@ -1,5 +1,5 @@
 """
-WSGI config for vercel_deploy project.
+WSGI config for TwoOneRemakeFix project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vercel_deploy.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'TwoOneRemakeFix.settings')
 
 application = get_wsgi_application()
 
