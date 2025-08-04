@@ -16,7 +16,16 @@ def contact(request):
 
 def contact(request):
     context = {}
-    context['count'] = list(range(1, 11))  # Example context variable
+    # context['count'] = list(range(1, 11))  # Example context variable
+    context['message'] = "This is the for page."
+
+    if request.method == 'POST' and request.POST.get('number') != '':
+        number = int(request.POST.get('number'))
+        print(request.POST['number'])
+        context['count'] = list(range(1, number + 1))
+    else:
+        context['count'] = list(range(1, 2))
+
     return render(request, 'for.html', context)
 
 # urls.py
