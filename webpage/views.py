@@ -15,7 +15,9 @@ def contact(request):
     return render(request, 'contact.html')
 
 def contact(request):
-    return render(request, 'for.html')
+    context = {}
+    context['count'] = list(range(1, 11))  # Example context variable
+    return render(request, 'for.html', context)
 
 # urls.py
 # from django.urls import path

@@ -1,1 +1,30 @@
 {% extends "base.html" %}
+
+{% block content %}
+<div class="card ms-auto" style="width: 28rem; float: right;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body" style="overflow-x:auto;">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in count %}
+         <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}
