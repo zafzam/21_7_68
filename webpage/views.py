@@ -33,12 +33,13 @@ def multiply(request):
     context = {}
     # context['count'] = list(range(1, 11))  # Example context variable
     context['message'] = "This is the for page."
-    multiplier = 2
+    # multiplier = 2
     if request.method == 'POST' and request.POST.get('number') != '':
-        number = int(request.POST.get('number'))
+        multiplier = int(request.POST.get('number'))
         print(request.POST['number'])
-        context['count'] = list(range(1, number + 1))
+        context['count'] = list(range(1, multiplier + 1))
     else:
+        multiplier = 2
         number = 1
         context['count'] = list(range(1, 2))
 
