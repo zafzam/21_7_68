@@ -14,7 +14,7 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def contact(request):
+def forpage(request):
     context = {}
     # context['count'] = list(range(1, 11))  # Example context variable
     context['message'] = "This is the for page."
@@ -27,6 +27,24 @@ def contact(request):
         context['count'] = list(range(1, 2))
 
     return render(request, 'for.html', context)
+
+
+def multiply(request):
+    context = {}
+    # context['count'] = list(range(1, 11))  # Example context variable
+    context['message'] = "This is the for page."
+    multiplier = 2
+    if request.method == 'POST' and request.POST.get('number') != '':
+        number = int(request.POST.get('number'))
+        print(request.POST['number'])
+        context['count'] = list(range(1, number + 1))
+    else:
+        number = 1
+        context['count'] = list(range(1, 2))
+
+    context['results'] = [(multiplier, i, multiplier * i) for i in context['count']]
+
+    return render(request, 'multiply.html', context)
 
 # urls.py
 # from django.urls import path
