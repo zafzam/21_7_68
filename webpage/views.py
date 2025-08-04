@@ -14,6 +14,9 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def contact(request):
+    return render(request, 'for.html')
+
 # urls.py
 # from django.urls import path
 # from . import views
